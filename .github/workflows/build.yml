@@ -12,7 +12,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: styfle/cancel-workflow-action@0.9.1
+      - uses: styfle/cancel-workflow-action@a40b8845c0683271d9f53dfcb887a7e181d3918b # 0.9.1
         with:
           workflow_id: ${{ github.event.workflow.id }}
 
@@ -38,7 +38,7 @@ jobs:
     - name: Generate coverage report
       run: ./gradlew core:codeCoverageReport
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@50ffd5fc58ed613b7848c7604df3a1effc13d659 # v2.1.0
 
   android-test:
     needs: cancel_previous
@@ -62,7 +62,7 @@ jobs:
       - name: Generate coverage report
         run: ./gradlew android:codeCoverageReport
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@50ffd5fc58ed613b7848c7604df3a1effc13d659 # v2.1.0
 
   destination-test:
     needs: cancel_previous
@@ -86,7 +86,7 @@ jobs:
       - name: Generate coverage report
         run: ./gradlew samples:kotlin-android-app-destinations:codeCoverageReport
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@50ffd5fc58ed613b7848c7604df3a1effc13d659 # v2.1.0
 
   security:
     needs: cancel_previous
