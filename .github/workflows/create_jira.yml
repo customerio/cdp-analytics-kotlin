@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: Login
-        uses: atlassian/gajira-login@master
+        uses: atlassian/gajira-login@c22a5debd482401472b285de4f6deedf70ddbb92 # master
         env:
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
@@ -24,7 +24,7 @@ jobs:
 
       - name: Create
         id: create
-        uses: atlassian/gajira-create@master
+        uses: atlassian/gajira-create@1c54357fdde9dab6273a0e26d67cb175ffffe498 # master
         with:
           project: ${{ secrets.JIRA_PROJECT }}
           issuetype: Bug
